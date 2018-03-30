@@ -1,0 +1,14 @@
+change all name in directory to underwater #
+
+>>>>ls | cat -n | while read n f; do mv "$f" "underwater-$n.jpg";  done
+
+#make_positives
+
+>>>>>> opencv_createsamples -info info.lst -num 50 -w 50 -h 50 -vec positives.vec -bg bg.txt
+
+#training
+
+>>>>opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos 45 -numNeg 100 -numStages 10 -w 50 -h 50 
+
+opencv_annotation --images=/home/mpourmpoulis/Pictures/turtles/hello  --annotations=/home/mpourmpoulis/pigi/training_cascade/info2.lst
+
